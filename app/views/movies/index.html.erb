@@ -10,16 +10,9 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
       <div id="media-results">
-        <% if @movies %>
-          <% @movies.each do |movie| %>
-            <h4><%= movie.title %></h4>
-            <p><%= movie.synopsis %></p>
-          <% end %>
-        <% else %>
-          <% @results.each do |res| %>
-            <h4><%= res.searchable.title %></h4>
-            <p><%= res.searchable.synopsis %></p>
-          <% end %>
+        <% @movies.each do |movie| %>
+          <h4><%= movie.title %></h4>
+          <p><%= movie.synopsis %></p>
         <% end %>
       </div>
     </div>

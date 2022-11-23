@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
   belongs_to :director
 
-  include PgSearch::Model
+  # include PgSearch::Model
   # pg_search_scope :search_by_title_and_synopsis,
   #   against: [ :title, :synopsis ],
   #   associated_against: {
@@ -10,5 +10,6 @@ class Movie < ApplicationRecord
   #   using: {
   #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   #   }
-  multisearchable against: [:title, :synopsis]
+  # multisearchable against: [:title, :synopsis]
+  searchkick
 end
